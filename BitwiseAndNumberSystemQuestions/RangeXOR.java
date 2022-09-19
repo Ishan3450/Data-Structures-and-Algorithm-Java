@@ -5,7 +5,7 @@ public class RangeXOR {
         int start = 3;
         int end = 9;
 
-        // short-hand easy formula
+        // * short-hand easy formula
         int ans = xor(end) ^ xor(start-1);
 
         System.out.println(ans);

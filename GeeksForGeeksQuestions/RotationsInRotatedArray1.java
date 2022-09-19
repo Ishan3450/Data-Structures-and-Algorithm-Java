@@ -7,7 +7,6 @@
  * - get the pivot element of the array
  * - return the index of the pivot element + 1
  */
-package GeeksForGeeksQuestions;
 
 public class RotationsInRotatedArray1 {
     int findKRotation(int arr[], int n) {

@@ -4,7 +4,7 @@ public class FloorOfANumber {
     public static void main(String[] args){
         int[] arr = {2,3,5,9,14,16,17,18};
 
-        System.out.println(floorOfNumber(arr, 3));
+        System.out.println(floorOfNumber(arr, 5));
 
     }
 
@@ -20,6 +20,7 @@ public class FloorOfANumber {
         int mid = start + (end - start) / 2;
 
         while(start <= end){
+            // * Condition 1
             if(target == arr[mid]){
                 break;
             } else if(target > arr[mid]){

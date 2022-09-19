@@ -1,7 +1,7 @@
 /*
  * Bubble Sort
  * 
- * - in bubble sort we will check for the adjacent values 
+ * - in bubble sort we will check for the adjacent values or elements 
  * - ex : arr = {1,3,4,2,5}
  * - in first j will be at index 1 and we have to check for j-1 (if j-1 > j) {swap j and j - 1}
  * - we will need 2 loops 1 for i and 2nd for j
@@ -23,10 +23,10 @@ public class BubbleSort {
     }
 
     static void bubbleSort(int[] arr){
-        boolean isSwapped = false;
+        // boolean isSwapped = false;
 
         for(int i = 0; i<arr.length; i++){
-            isSwapped = false;
+            boolean isSwapped = false;
 
             for(int j = 1; j < arr.length - i; j++){
                 if(arr[j-1] > arr[j]){

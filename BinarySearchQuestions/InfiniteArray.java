@@ -3,7 +3,7 @@
  * 
  * - take the array
  * - start a box or a chunk of points with start and end
- * - if we found the target then apply binary search on that chunk
+ * - if we found the target in between that range then apply binary search on that chunk
  * - else move to next chunk of points having size double than the previous chunk of points
  */
 
@@ -29,11 +29,11 @@ public class InfiniteArray {
             int nextStart = end + 1;
 
             // end = previous end + (sizeOfBox) * 2;
-            // adding + 1 in the sizeOfBox bacause of we are working on array (index things)
-            end = end + (end - start + 1) * 2;
+            end = end + (end - start + 1) * 2; // adding + 1 in the sizeOfBox because of we are working on array (index things)
             start = nextStart;
         }
 
+        // at this point we will have a range where the target belongs so now its time to apply the binary search
         return binarySearch(arr, target, start, end);
     }
 

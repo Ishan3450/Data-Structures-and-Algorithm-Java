@@ -12,7 +12,6 @@
  * - then just return the difference between originalSum - arrayValueSum and boom we got our 307 test cases passes :)
  */
 
-package GeeksForGeeksQuestions;
 
 public class MissingNumberInArray {
     public static void main(String[] args){

@@ -2,7 +2,7 @@
  ? How we will know is the number power of 2 or not
  * - Just get the binary number
  * - if the binary on that number contains only 1 '1 bit' then the number is power of 2
- * - so count the number of 1's in the binary of that number by using the loop
+ * - so count the number of 1's in the binary of that number through loop
  */
 
 package BitwiseAndNumberSystemQuestions;
@@ -37,7 +37,7 @@ public class IsNumberPowerOf2 {
     /*
      * Let take num 8
      * - Binary of num 8 : 1000
-     * - Binary of num - 1 -> 7 : 111
+     * - Binary of num - 1(8 - (8-1)) -> 7 : 111
      * 
      * - So and num and num - 1 which will give like:
      * - 8:   1000
@@ -57,7 +57,7 @@ public class IsNumberPowerOf2 {
             return false;
         }
 
-        boolean ans = (n & (n-1))== 0;
+        boolean ans = (n & (n-1)) == 0;
         return ans;
     }
 

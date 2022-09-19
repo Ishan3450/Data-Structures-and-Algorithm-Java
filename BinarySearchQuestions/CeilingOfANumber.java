@@ -12,7 +12,7 @@ public class CeilingOfANumber {
     public static void main(String[] args){
         int[] arr = {2,3,5,9,14,16,17,18};
 
-        System.out.println(ceilingOfNumber(arr, 19));
+        System.out.println(ceilingOfNumber(arr, 1));
     }
 
     static int ceilingOfNumber(int[] arr, int target){
@@ -26,9 +26,17 @@ public class CeilingOfANumber {
         int mid = start + (end - start) / 2;
 
         while(start <= end){
-            if(target == arr[mid]){
-                break;
-            } else if(target > arr[mid]){
+            //* Condition 1 
+            // if(target == arr[mid]){
+            //     break;
+            // } else if(target > arr[mid]){
+            //     start = mid + 1;
+            // } else {
+            //     end = mid - 1;
+            // }
+
+            // Condition 2
+            if(target > arr[mid]){
                 start = mid + 1;
             } else {
                 end = mid - 1;

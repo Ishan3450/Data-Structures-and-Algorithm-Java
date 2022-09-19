@@ -1,6 +1,5 @@
 // * SOLVED USING RECURSION
 
-package GeeksForGeeksQuestions;
 
 public class TotalSetBits {
     public static void main(String[] args){

@@ -7,7 +7,6 @@
  * 
  */
 
-package GeeksForGeeksQuestions;
 
 import java.util.ArrayList;
 
