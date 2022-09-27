@@ -3,7 +3,8 @@ package BinarySearchQuestions;
 public class RotationCountInRotatedArray {
 
     public static void main(String[] args){
-        int[] arr = {7, 9, 11, 12, 15};
+        // int[] arr = {7, 9, 11, 12, 15};
+        int[] arr = {12, 15, 7, 9, 11};
 
         int pivot = getPivot(arr) + 1;
         System.out.println(pivot);
@@ -31,7 +32,7 @@ public class RotationCountInRotatedArray {
             if(arr[start] > arr[mid]){
                 end = mid - 1;
             } else{
-                start = start + 1;
+                start = mid + 1;
             }
 
         }

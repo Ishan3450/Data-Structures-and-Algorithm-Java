@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class CyclicSort {
     public static void main(String[] args){
-        int[] arr = {5,4,3,2,1}; // worst case array
+        int[] arr = {5,4,3,2,1}; // worst case array    
 
         cyclicSort(arr);
     }
