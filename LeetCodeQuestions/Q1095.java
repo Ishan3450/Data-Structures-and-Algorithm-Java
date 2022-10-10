@@ -1,5 +1,6 @@
 /*
- ! This question is remaing for submission on LeetCode as it uses Interfaces which I don't know for now'
+ ! SELF NOTE: This question is remaing for submission on LeetCode as it uses Interfaces which I don't know for now
+ 
  * https://leetcode.com/problems/find-in-mountain-array/
  * 
  * 1095. Find in Mountain Array - LEETCODE HARD Question

@@ -3,7 +3,6 @@
  * Rotation
  * 
  * - easy question
- * - passed 340 testcases in 1st attemp ;)
  * - get the pivot element of the array
  * - return the index of the pivot element + 1
  */

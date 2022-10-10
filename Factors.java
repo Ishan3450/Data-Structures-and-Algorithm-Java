@@ -14,7 +14,7 @@ public class Factors {
      * There are multiple approaches to get the factors:
      * - O(n) : run loop till n
      * - O(n/2) : run loop till n/2
-     * - but in this file we are going to do the O(sqrt(n)) solution
+     * - but in this file we are going to do the O(sqrt(n)) solution which is the most optimize solution.
      */
 
     // O(sqrt(n)) solution
@@ -27,17 +27,17 @@ public class Factors {
         /*
          * - count += 2 is there it means:
          * - as we are goint till sqrt(n) we have less checks
-         * - so if 2 * 3 is 6 does it not mean that 3 * 2 is also 6
+         * - so if 2 * 3 is 6 does it not mean that 3 * 2 is also 6, like that
          * - so we are adding the factors count by 2
          * - suppose we have to find factors of 36
-         * - so there will be 6*6=36 so to prevent that if condition is there
+         * - so there will be 6*6=36 so to prevent that another condition block is there
          * - debug it or use pen and paper to run and then you will get your doubts clear
          */
 
         int count = 0;
         for(int i=1; i*i <= N; i++){
             if(N%i == 0){
-                if(N/i == i){ // checking for 6*6=36 like case
+                if(N/i == i){ // checking for 6*6=36 like case as I mentioned above
                     count ++;
                 } else{
                     count += 2;

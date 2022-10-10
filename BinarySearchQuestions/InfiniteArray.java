@@ -28,8 +28,9 @@ public class InfiniteArray {
         while (target > arr[end]) {
             int nextStart = end + 1;
 
+            // doubling the size
             // end = previous end + (sizeOfBox) * 2;
-            end = end + (end - start + 1) * 2; // adding + 1 in the sizeOfBox because of we are working on array (index things)
+            end = end + (end - start + 1) * 2; // adding + 1 in the sizeOfBox because of we are working on array (indexing)
             start = nextStart;
         }
 

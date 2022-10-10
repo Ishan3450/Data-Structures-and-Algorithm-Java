@@ -1,7 +1,7 @@
-/*
- * LEETCODE HARD QUESTION
+/* 
+ * LeetCode Hard Question
  * 
- * 41. First Missing Positive
+ * 41. First Missing Positive 
  * 
  * - take the input array
  * - we have to find the smallest missing positive element
@@ -11,8 +11,6 @@
  */
 
 package LeetCodeQuestions;
-
-import java.util.Arrays;
 
 public class Q41 {
     public static void main(String[] args) {

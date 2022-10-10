@@ -15,7 +15,7 @@
  *       else check if mid element mid element < mid - 1
  *           then move the mid pointer to left shift by 1 (mid -= 1)
  * 
- * Second Approach (Optmized o(log n) solution)
+ * Second Approach (Optmized O(log n) solution)
  *  - first take the array
  *  - array is guaranteed to be a mountaine or bitonic array
  *  - apply binary search to the array
@@ -37,7 +37,7 @@ package LeetCodeQuestions;
 
 public class Q852 {
     
-    // brute force approach
+    // * brute force approach
     // public int peakIndexInMountainArray(int[] arr) {
     //     int start = 0;
     //     int end = arr.length - 1;

@@ -1,9 +1,9 @@
 /*
- ? To get prime of any number there are just few intiuations:
- * - Just go till the sqrt(n).
- * - Like, for 36 we will go till 6 and till that we will get the answer.
+ ? To get prime of any number there are just few intuations:
+ * - Loop will go till the sqrt(n).
+ * - Like, for 36 we will go till 6 and we will get the answer.
  * - Complexity: O(sqrt(n))
- * - We are going till the sqrt(n) bacause after that all the answers will be repeting
+ * - We are going till the sqrt(n) because after that all the answers will be repeting
  */
 
 public class PrimeNumbers {

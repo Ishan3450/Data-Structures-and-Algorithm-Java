@@ -9,7 +9,7 @@
  * - first take the min and max value 
  * - then do sum of from min value to n and store it in originalSum
  * - then do sum of array values from 0 to n-1 and store it in arrayValueSum 
- * - then just return the difference between originalSum - arrayValueSum and boom we got our 307 test cases passes :)
+ * - then just return the difference between originalSum - arrayValueSum and boom we got our 307 test cases passes.
  */
 
 

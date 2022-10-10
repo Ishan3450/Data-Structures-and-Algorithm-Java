@@ -1,4 +1,6 @@
 /*
+ * NOTE: Approach is bit longer but you will definately get the approach.
+ * 
  * 410. Split Array Largest Sum
  * 
  * - HARD Question so full elaboration is there

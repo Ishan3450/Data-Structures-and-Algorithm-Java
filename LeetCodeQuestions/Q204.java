@@ -6,7 +6,7 @@
 * - We have to find the prime number till n-1.
 * - So what we gonna do is like: 
 * - We will go till the sqrt(n)
-* - and we will eleminate all the factors of numbers 1 by 1
+* - and we will eleminate all the factors of numbers of the loop till sqrt(n) one by one
 * - so at last only numbers will be there which are prime or we can say that they have no factors
 * - we gonna take an Boolean array to do the task
 */
@@ -23,10 +23,12 @@ public class Q204 {
 
     static int countPrimes(int n) {
         // ? NOTE:
-        // * size of the array will be n+1 (1-based index)
-        // * be default all the values of the array elements will be false
-        // * we are gonna consider false as prime number and true as not prime numbers
-        // * we are gonna consider element value as its index (1-based index)
+        /* 
+         * size of the array will be n+1 (1-based index)
+         * be default all the values of the array elements will be false
+         * we are gonna consider false as prime number and true as not prime numbers
+         * we are gonna consider index as its element value (1-based index)   
+        */
         boolean[] primes = new boolean[n+1];
         
         seive(n, primes);
@@ -51,7 +53,6 @@ public class Q204 {
                 }
             }
         }
-        
         // so now at this point we will have the primes array like false values will be there only for the prime numbers
     }
 }

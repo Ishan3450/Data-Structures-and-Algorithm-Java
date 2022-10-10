@@ -1,5 +1,5 @@
 /*
- * NOTE: Dittox same question as Q852 not even changing a single word of the code
+ * NOTE: Exact same question as Q852 not even changing a single word of the code
  * 
  * 162. Find Peak Element
  *  - first take the array

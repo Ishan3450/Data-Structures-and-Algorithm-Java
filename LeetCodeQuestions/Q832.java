@@ -8,7 +8,6 @@
 
 package LeetCodeQuestions;
 
-import java.util.Arrays;
 
 public class Q832 {
     public static void main(String[] args){

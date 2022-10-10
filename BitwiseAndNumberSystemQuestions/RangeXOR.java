@@ -11,7 +11,7 @@ public class RangeXOR {
         System.out.println(ans);
     }
 
-    // this pattern will only be there if one do it on paper this pattern will be there
+    // this pattern will only be there if you do it on paper after doing it on paper you will use the pattern itself.
     static int xor(int a){
         if(a%4 == 0){
             return a;

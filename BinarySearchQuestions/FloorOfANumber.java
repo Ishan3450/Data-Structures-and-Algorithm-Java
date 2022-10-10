@@ -2,9 +2,10 @@ package BinarySearchQuestions;
 
 public class FloorOfANumber {
     public static void main(String[] args){
-        int[] arr = {2,3,5,9,14,16,17,18};
+        // int[] arr = {2,3,5,9,14,16,17,18};
+        int[] arr = {1,2,4,5,6};
 
-        System.out.println(floorOfNumber(arr, 5));
+        System.out.println(floorOfNumber(arr, 3));
 
     }
 

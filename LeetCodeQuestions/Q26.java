@@ -9,8 +9,8 @@ import java.util.Arrays;
 
 public class Q26 {
     public static void main(String[] args) {
-        // int[] arr = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
-        int[] arr = { 1,1,2 };
+        int[] arr = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+        // int[] arr = { 1, 1, 2 };
 
         System.out.println(removeDuplicates(arr));
     }
@@ -20,9 +20,9 @@ public class Q26 {
         int swappedCount = 1;
 
         for (int j = 1; j < nums.length; j++) {
-            if (nums[i] == nums[j]){
+            if (nums[i] == nums[j]) {
                 j++;
-            } else{
+            } else {
                 i++;
                 swap(nums, i, j);
                 swappedCount++;
@@ -33,7 +33,7 @@ public class Q26 {
         return swappedCount;
     }
 
-    static void swap(int[] nums, int i, int j){
+    static void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;

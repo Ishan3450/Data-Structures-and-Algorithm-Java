@@ -22,7 +22,7 @@ public class Q286 {
         
         // another case will be like:
         // lets say our array is {0,1,2,3} and size of array is n = 5
-        // if the code pointer is here it means the above for loop didn't found the element
+        // if the code pointer is at last element of the index, which is 3 it means the above for loop didn't found the element
         // so definately it will the n or length of the array
         return nums.length;
 

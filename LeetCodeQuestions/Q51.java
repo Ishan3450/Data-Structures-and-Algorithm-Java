@@ -1,6 +1,6 @@
 /*
  * 51. N-Queens
- * 
+ * LeetCode Hard Question
  */
 
 package LeetCodeQuestions;

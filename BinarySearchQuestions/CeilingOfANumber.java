@@ -10,9 +10,10 @@ package BinarySearchQuestions;
 
 public class CeilingOfANumber {
     public static void main(String[] args){
-        int[] arr = {2,3,5,9,14,16,17,18};
+        // int[] arr = {2,3,5,9,14,16,17,18};
+        int[] arr = {1,2,4,5,6};
 
-        System.out.println(ceilingOfNumber(arr, 1));
+        System.out.println(ceilingOfNumber(arr, 3));
     }
 
     static int ceilingOfNumber(int[] arr, int target){
@@ -41,6 +42,10 @@ public class CeilingOfANumber {
             } else {
                 end = mid - 1;
             }
+
+            System.out.println("Start: " + start);
+            System.out.println("Mid: " + mid);
+            System.out.println("End: " + end);
 
             mid = start + (end - start) / 2;
         }

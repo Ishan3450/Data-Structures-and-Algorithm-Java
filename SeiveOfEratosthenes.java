@@ -37,7 +37,7 @@ public class SeiveOfEratosthenes {
             if(!primes[i]){ // seeking for false value of the element
 
                 // switching all the multiples of i to true
-                for(int j=i*2; j<=n; j+=i){
+                for(int j=i*2; j<=n; j+=i){ // loop to check all the multiples of i
                     primes[j] = true;
                 }
             }

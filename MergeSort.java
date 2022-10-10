@@ -2,7 +2,7 @@
  * Merge Sort
  * 
  * - It is basically like divide and conquer
- * - 1st divide the array in to two halfves
+ * - 1st divide the array in to two halves
  * - Then sort the two parts using recursion
  * - After sorting the two parts merge it in the sorted order
  */

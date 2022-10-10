@@ -42,22 +42,22 @@ public class SearchIn2DArray {
     }
 
     // search_optimized is the more optimized function for searching rather than the search function written upwards
-    // ! just use row_count first then use the col_count  like arr[row][col]i made a mistake my bad :)
+    // * just use row_count first then use the col_count like arr[row][col]i made a mistake my bad :)
     static boolean search_optimized(int[][] arr, int target) {
-        int col_count = 0;
-        int row_count = 0;
-        while (col_count < arr.length) {
-            // System.out.println("Printing element array of [" + col_count + "][" + row_count + "]");
+        int r = 0;
+        int c = 0;
+        while (r < arr.length) {
+            // System.out.println("Printing element array of [" + r + "][" + row_count + "]");
 
-            if (arr[col_count][row_count] == target) {
+            if (arr[r][c] == target) {
                 return true;
-            } else if (row_count == arr[col_count].length - 1) {
+            } else if (c == arr[r].length - 1) {
                 // System.out.println("Column count incremented");
-                col_count++;
-                row_count = 0;
-            } else if (row_count < arr[col_count].length) {
+                r++;
+                c = 0;
+            } else if (c < arr[r].length) {
                 // System.out.println("Row count incremented");
-                row_count++;
+                c++;
             }
         }
 

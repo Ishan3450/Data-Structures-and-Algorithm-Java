@@ -27,11 +27,11 @@ public class myPow {
             x *= x;
             n >>= 1;
 
-            // some logs to get you through the process :)
-            System.out.println("Ans: " + ans);
-            System.out.println("Base: " + x);
-            System.out.println("Power: " + n);
-            System.out.println();
+            // * some logs to get you through the process :)
+            // System.out.println("Ans: " + ans);
+            // System.out.println("Base: " + x);
+            // System.out.println("Power: " + n);
+            // System.out.println();
         }
 
         return ans;
