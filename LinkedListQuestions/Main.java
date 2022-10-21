@@ -88,6 +88,19 @@ public class Main {
         System.out.println("Reversed in-between:");
         rLL.display(rLL.reverseBetween(rLL.getHead(), 2, 4));
 
+        System.out.println();
+        System.out.println("Re ordering Linked List");
+        System.out.println("------------------------");
+ 
+        SLL.insertAtLast(4);
+        SLL.insertAtLast(5);
+        // SLL.insertAtLast(6);
+
+        SLL.display();
+        System.out.println();
+        SLL.reorderList(SLL.getHead());
+        SLL.display();
+
     }
     
 }

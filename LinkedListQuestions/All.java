@@ -1,8 +1,5 @@
 /*
  * All the important Questions are in a single file.
- * 
- * 1. Insertion using recursion
- * 2. Remove Duplicates
  */
 
 package LinkedListQuestions;
@@ -81,6 +78,10 @@ public class All {
         System.out.println("END");
     }
 
+    public Node getHead(){
+        return head;
+    }
+
 
     /*
      * Main code starts here
@@ -136,7 +137,7 @@ public class All {
                  *      4th - 3 is the last value having next null so loop will be terminated here
                  */
                 temp.next = temp.next.next;
-                size--;
+                size--; // size is not for every codebase, it is for this file only you can skip it.
             } else{
                 // if not same then move forward
                 temp = temp.next;
@@ -199,10 +200,7 @@ public class All {
                 // calculate the length of the cycle
 
                 /*
-                 * When fast and slow are at smae position we will keep the 
-                 * fast pointer at same position and move the slow position till slow pointer 
-                 * again comes at the fast pointer position so by doing that, the
-                 * length of the cycle will be calculated.
+                 * When fast and slow are at same position we will keep the fast pointer at same position and move the slow position till slow pointer again comes at the fast pointer position so by doing that, the length of the cycle will be calculated.
                  */
 
                 Node temp = slow;
@@ -229,7 +227,7 @@ public class All {
      * - Second Pointer: s
      * 
      * - Find the length of the cycle.(using fast and slow pointer method)
-     * - s and f will be initailly at thhe starting of the array
+     * - s and f will be initailly at the starting of the array
      * - now move the s pointer length of the cycle times
      * - after moving s pointer start moving both the s and f pointer by 1 until they met.
      * - when both pointers met that point is the starting of the cycle.
@@ -353,7 +351,87 @@ public class All {
 
         tail.next = (head1 != null) ? head1 : head2;
         return dummy.next;
+    }    
+
+    public Node reverse(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        Node prev = null;
+        Node curr = head;
+        Node next = curr.next;
+
+        while(curr != null){
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            if(next != null){
+                next = next.next;
+            }
+        }
+
+        return prev;
     }
 
+    /*
+     * Q8: Rearrange the list
+     * 
+     * 143. Reorder List LeetCode Medium
+     * 
+     * Approach:
+     * - first we will get the middle of the node
+     * - then we will reverse the list from mid till end of the list
+     * - then we will place two pointer, and name it firstHead and secondHead
+     *      - firstHead will be pointing at the start
+     *      - secondHead will be pointing at the starting of the reversed list
+     * - then we will take the firstHead and secondHead in the loop till one of them becomes null
+     */
+    public void reorderList(Node head) {
+        // edge case
+        if(head == null || head.next == null){
+            return;
+        }
+
+        // first we have to get the middle of the node
+        Node middle = middleNode(head);
+
+        // now we have to reverse the list
+        Node secondHead = reverse(middle);
+        Node firstHead = head;
+
+        while(firstHead != null && secondHead != null){
+
+            // System.out.println();
+            // System.out.println("FirstHead: " + firstHead.value);
+            // System.out.println("SecondHead: " + secondHead.value);
+
+            // for firstHead
+            Node temp = firstHead.next; // storing the next of the original list
+            firstHead.next = secondHead; // updating with the secondHead
+            firstHead = temp; // moving the firstHead forward
+
+            // for secondHead
+            temp = secondHead.next; // same explaination as for firstHead
+            secondHead.next = firstHead;
+            secondHead = temp;
+        }
+
+        // setting next of tail to null if not
+        /*
+         * Example:
+         * Origin : 1,2,3,4,5
+         * 
+         * Head first : 1 2 3
+         * Head second : 5 4 3
+         * 
+         * - to prevent the last 3 two times we will set the next of the of the Head first to null
+         * - Re-ordered list will be : 1 5 2 4 3 3
+         * - to prevent the 3 two times we put the below condition block
+         */
+        if(firstHead != null){ 
+            firstHead.next = null;
+        }
+    }
 
 }

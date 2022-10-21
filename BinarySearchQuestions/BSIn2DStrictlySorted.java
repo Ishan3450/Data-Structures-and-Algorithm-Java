@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class BSIn2DStrictlySorted {
     public static void main(String[] args){
-        int[][] arr ={
+        int[][] arr = {
             {1,2,3,4},
             {5,6,7,8},
             {9,10,11,12},
@@ -20,33 +20,33 @@ public class BSIn2DStrictlySorted {
 
     static int[] search(int[][] arr, int target){
         
-        int start = 0; // row
-        int end = arr[start].length - 1; // column
+        int row = 0; // row
+        int col = arr[row].length - 1; // column
 
-        while(start <= end || start == arr.length || end == arr.length){
-            int mid = start + (end - start) / 2;
-            end = arr[start].length - 1;
+        while(row <= col || row == arr.length || col == arr.length){
+            int mid = row + (col - row) / 2;
+            col = arr[row].length - 1;
 
 
-            if(target == arr[start][end]){
+            if(target == arr[row][col]){
                 // ans found
-                return new int[]{start, end};
+                return new int[]{row, col};
             }
 
-            if(target > arr[start][end]){
-                start ++;
+            if(target > arr[row][col]){
+                row ++;
                 continue;
             }
 
-            if(target < arr[start][0]){
-                start --;
+            if(target < arr[row][0]){
+                row --;
                 continue;
             }
 
-            if(target < arr[start][mid]){
-                end = mid - 1;
+            if(target < arr[row][mid]){
+                col = mid - 1;
             }else{
-                start = mid + 1;
+                row = mid + 1;
             }
 
             

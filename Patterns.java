@@ -43,6 +43,12 @@ public class Patterns {
 
         System.out.println("------------------------");
         pattern35(4);
+        System.out.println("------------------------");
+        pattern36(6);
+        System.out.println("------------------------");
+        pattern37(5);
+        System.out.println("------------------------");
+        pattern38(5);
     }
 
     // *****
@@ -395,10 +401,10 @@ public class Patterns {
         }
     }
 
-    // 1
-    // 2 1 2
-    // 3 2 1 2 3
-    // 4 3 2 1 2 3 4
+    //         1
+    //       2 1 2
+    //     3 2 1 2 3
+    //   4 3 2 1 2 3 4
     // 5 4 3 2 1 2 3 4 5
     static void pattern30(int n) {
         for (int i = 1; i <= n; i++) {
@@ -445,9 +451,9 @@ public class Patterns {
         }
     }
 
-    // 1 1
-    // 12 21
-    // 123 321
+    // 1      1
+    // 12    21
+    // 123  321
     // 12344321
     static void pattern35(int n) {
         for (int i = 1; i <= n * 2; i++) {
@@ -465,6 +471,69 @@ public class Patterns {
             }
             System.out.println();
 
+        }
+    }
+
+    /*
+        * * * * *
+        *       *
+        *       *
+        *       *
+        * * * * *
+     */
+    static void pattern36(int n){
+        // below 4 variables are boundaries of the pattern box
+        int initial_j = 1;
+        int initial_i = 1;
+        int max_j = n;
+        int max_i = n;
+
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=n; j++){
+                if(i == initial_i || i == max_i || j == initial_j || j == max_j){
+                    System.out.print("*");
+                } else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+     * Solid Rhombus
+         * * * * *
+        * * * * *
+       * * * * *
+      * * * * *
+     * * * * *
+     */
+    static void pattern37(int n){
+        for(int i=1; i<=n; i++){
+            // space loop
+            for(int j=5; j>=i; j--){
+                System.out.print(" ");
+            }
+
+            // * loop
+            for(int k=1; k<=n; k++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern38(int n){
+        for(int i=1; i<=n; i++){
+            // spaces loop
+            for(int j=5; j>=i; j--){
+                System.out.print(" ");
+            }
+
+            for(int j=1; j<=i; j++){
+                System.out.print(i + " ");
+            }
+            System.out.println();
         }
     }
 }

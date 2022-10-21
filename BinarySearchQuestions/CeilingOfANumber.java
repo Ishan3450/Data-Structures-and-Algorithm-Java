@@ -21,7 +21,7 @@ public class CeilingOfANumber {
         int end = arr.length - 1;
 
         // what if the target is greater than the greatest element of the array
-        if(target > arr[end]){ return -1;}
+        if(target > arr[end]){ return -1; }
 
 
         int mid = start + (end - start) / 2;

@@ -1,7 +1,6 @@
 public class Fibonacci{
     public static void main(String args[]){
-        fibo(4);
-
+        fibo(5);
         System.out.println("-----------------------");
         System.out.println(fibonacciUsingRecursion(4));
     }
@@ -13,7 +12,7 @@ public class Fibonacci{
         System.out.println(n1);
         System.out.println(n2);
         
-        for(int i=1; i<2; i++){
+        for(int i=1; i<n; i++){
             int n3 = n1 + n2;
             System.out.println(n3);
             n1 = n2;

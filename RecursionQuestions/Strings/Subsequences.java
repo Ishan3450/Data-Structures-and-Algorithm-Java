@@ -5,6 +5,7 @@
     * - in one call one have to add it
     * - and in another call one have to ignore it
     * - at the end we would have the subsequences
+    * - Complexity: O(2^N)
 */
 
 package RecursionQuestions.Strings;

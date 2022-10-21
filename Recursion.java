@@ -1,19 +1,18 @@
 public class Recursion {
     public static void main(String[] args){
-         print(1);
+         print(5);
     }
 
     static void print(int n){
         // base condition of recursion
-        if(n == 5){
-            System.out.println(5);
+        if(n == 0){
             return;
         }
 
         // body of the function
-        System.out.println(n);
+        System.out.print(n + " ");
 
         // recursive call
-        print(n+1);
+        print(n-1);
     }
 }

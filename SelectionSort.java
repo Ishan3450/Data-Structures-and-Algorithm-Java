@@ -4,7 +4,6 @@
  * - in selection sort there will be 2 things needed
  * - 1 is to get the max element of the array
  * - 2 then swap the max element with the the last index element
- * - in below approach only 1 loop is needed and 2 methods
  * - the loop will run from 0 to the length of the array
  * - and there are 2 methods :
  *      - 1 is to get the maximum element from the array which takes 2 arguement

@@ -182,9 +182,8 @@ public class ReversingLinkedList {
         }
 
         /*
-         * Note: basically last and newEnd will be used to link the newly reversed list's start and end so after linking the list will be completed.
+         * Note: basically last and newEnd will be used to link the newly reversed list's start and end so after linking, the list will be completed.
          */
-
         if(last != null){
             last.next = prev;
         } else{ // if next of last is null it means it is the last node of the linked list
@@ -195,4 +194,53 @@ public class ReversingLinkedList {
         return head;
     }
 
+    /*
+     * 25. Reverse Nodes in k-Group
+     * 
+     * LeetCode Hard Questions
+     */
+    public ListNode reverseKGroup(ListNode head, int k) {
+        // edge case
+        if(k <= 1 || head == null){
+            return head;
+        }
+
+        ListNode curr = head;
+        ListNode prev = null;
+
+        /*
+         * Basically we will run for the k number of groups 
+         * like: for length 5 and k=2
+         * the list will contain 2 groups 2 + 2 and last 1
+         * so it will run 2 times (the outer loop)
+         */
+        int length = getLength();
+        int count = length / k;
+
+        while(count > 0){ // will decrement the count every time by 1
+            ListNode last = prev;
+            ListNode newEnd = curr;
+
+            ListNode next = curr.next;
+
+            for(int i=0; curr != null && i<k; i++){
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+                if(next != null){ next = next.next; }
+            }
+
+            if(last != null){
+                last.next = prev;
+            } else{
+                head = prev;
+            }
+
+            newEnd.next = curr;
+            prev = newEnd;
+            count --;
+        }
+        return head;
+    }
+    
 }
