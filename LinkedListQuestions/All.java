@@ -279,7 +279,7 @@ public class All {
      * 
      * Approach:
      * 
-     * - Fast & Slow pointer
+     * - Fast and Slow pointer method
      * - Initially will start from head with two pointers
      * - will run the loop till the fast pointer completes the list
      * - so when fast pointer completes the list the slow pointer will be pointing at the half of the list as fast is moving twice than the slow.

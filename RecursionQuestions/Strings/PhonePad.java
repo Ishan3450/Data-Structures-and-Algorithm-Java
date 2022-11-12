@@ -19,7 +19,7 @@ public class PhonePad{
         }
 
         // function body
-        int digit = up.charAt(0) - '0'; // this will convert '2' to 2
+        int digit = up.charAt(0) - '0'; // this will convert character '2' to integer 2
 
         /*
          * Range will be like:
@@ -29,7 +29,7 @@ public class PhonePad{
          * for 4 -> (4-1)*3 till 4*3 -> 9 till 12 (12 is exclusive)
          */
 
-        for(int i=(digit-1)*3; i< digit*3; i++){
+        for(int i=(digit-1)*3; i < digit*3; i++){
             char ch = (char) ('a' + i);
             
             // recursive call

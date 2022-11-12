@@ -38,11 +38,10 @@ public class NQueens {
                 board[row][col] = true;
                 count += placeQueens(board, row+1);
 
-                // backtracking: reverting back
+                // backtracking: reverting back 
                 board[row][col] = false;
             }
         }
-
         return count;
     }
 

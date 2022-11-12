@@ -78,10 +78,10 @@ public class SubSet {
             // iterating till the size of the outer list
             for(int i=0; i<size; i++){
                 // copying the ith outer loop and adding the current element of the array in it
-                ArrayList<Integer> internal = new ArrayList<>(outer.get(i)); // obtaining ith element
+                ArrayList<Integer> internal = new ArrayList<>(outer.get(i)); // obtaining ith list
                 internal.add(num); // appending the current element of the array into the copy of ith outer loop present in the internal
 
-                /*
+                /*  
                  * At last after making copy of ith outer loop into internal and adding the current 
                  * element of the array into the internal we have to add internal list to the outer loop.
                  */

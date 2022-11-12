@@ -90,6 +90,21 @@ public class ReversingLinkedList {
     /*
      * Main code starts here
      */
+
+    // Reverse using recursion without tail
+    public ListNode reverseList(ListNode node){
+        // base condition
+        if(head == null || head.next == null){
+            return head;
+        }
+
+        // function body
+        ListNode newHead = reverseList(node.next);
+        node.next.next = node;
+        node.next = null;
+
+        return newHead;
+    }
     
     // Reverse Using Recursion
     public void reverseUsingRecursion(ListNode node){

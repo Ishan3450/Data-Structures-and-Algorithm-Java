@@ -56,7 +56,7 @@ public class QuickSort {
 
             // till this point we have our left and right violating elements
             // so we are gonna swap those two elements
-            if(s <= e){
+            if(s <= e){ // when start is at left side and end is at right side, if condition will hit
                 // swap
                 int temp = arr[s];
                 arr[s] = arr[e];
