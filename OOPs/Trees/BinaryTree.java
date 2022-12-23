@@ -2,26 +2,31 @@ package OOPs.Trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class BinaryTree {
-    static class TreeNode{
+    static class TreeNode {
         int data;
         TreeNode left;
         TreeNode right;
 
-        TreeNode(int data){
+        TreeNode(int data) {
             this.data = data;
             this.left = null;
             this.right = null;
         }
     }
 
+    // this class will make a binary tree from an array provided to the instance
+    // object in the main method below
     static class BinaryTreeStructure {
-        static int index = -1; // initial value represents the tree is empty
+        static int index = -1; // initial value as -1 represents the tree is empty
 
-        public static TreeNode createNode(int[] nodes){
-            index ++;
-            if(nodes[index] == -1){
+        public static TreeNode createNode(int[] nodes) {
+            index++; // a common index will be maintained for the tree to keep track of the curr
+                     // element of the nodes
+            if (nodes[index] == -1) {
                 return null;
             }
 
@@ -33,6 +38,29 @@ public class BinaryTree {
         }
     }
 
+    // to create binary tree with user-inputed values
+    static class CreateBinaryTree{
+        public static TreeNode createNode(TreeNode root){
+            Scanner sc = new Scanner(System.in);
+            
+            System.out.println("Enter data for root node: ");
+            int data = sc.nextInt();
+            root = new TreeNode(data);
+
+            if(data == -1){
+                return null;
+            }
+
+            System.out.println("Enter data of left of " + data + ": ");
+            root.left = createNode(root.left);
+
+            System.out.println("Enter data of right of " + data + ": ");
+            root.right = createNode(root.right);
+
+            return root;
+        }
+    }
+
     /*
      * Pre-order: O(N) DFS Approach
      * 
@@ -40,9 +68,9 @@ public class BinaryTree {
      * 2. Left Subtree
      * 3. Right Subtree
      */
-    public static void PreorderTraversal(TreeNode root){
+    public static void PreorderTraversal(TreeNode root) {
         // base condition
-        if(root == null){
+        if (root == null) {
             return;
         }
 
@@ -51,7 +79,7 @@ public class BinaryTree {
         PreorderTraversal(root.left);
         PreorderTraversal(root.right);
     }
-    
+
     /*
      * In-order: O(N) DFS Approach
      * 
@@ -59,9 +87,9 @@ public class BinaryTree {
      * 2. Root
      * 3. Right Subtree
      */
-    public static void InorderTraversal(TreeNode root){
+    public static void InorderTraversal(TreeNode root) {
         // base condition
-        if(root == null){
+        if (root == null) {
             return;
         }
 
@@ -70,7 +98,6 @@ public class BinaryTree {
         System.out.print(root.data + " ");
         InorderTraversal(root.right);
     }
-    
 
     /*
      * Post-order: O(N) DFS Approach
@@ -79,9 +106,9 @@ public class BinaryTree {
      * 2. Right Subtree
      * 3. Root
      */
-    public static void PostorderTraversal(TreeNode root){
+    public static void PostorderTraversal(TreeNode root) {
         // base condition
-        if(root == null){
+        if (root == null) {
             return;
         }
 
@@ -90,14 +117,14 @@ public class BinaryTree {
         PostorderTraversal(root.right);
         System.out.print(root.data + " ");
     }
-    
+
     /*
      * Level-order: O(N) BFS Approach
      * 
      * We will use queue to get the level tree nodes
      */
-    public static void levelOrder(TreeNode root){
-        if(root == null){
+    public static void levelOrder(TreeNode root) {
+        if (root == null) {
             return;
         }
 
@@ -105,35 +132,67 @@ public class BinaryTree {
         q.add(root);
         q.add(null); // * NULL represents new line or the end of the current level
 
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             TreeNode currNode = q.remove();
-            if(currNode == null){ // if it is null it means we have to print new line
-                System.out.println();
-                if(q.isEmpty()){
+            if (currNode == null) { // if it is null it means we have to print new line
+                System.out.println(); 
+                if (q.isEmpty()) {
                     break;
-                } else{ // add the null back for the next level
+                } else { // add the null back for the next level
                     q.add(null);
                 }
-            } else{
+            } else {
                 System.out.print(currNode.data + " ");
-                if(currNode.left != null){
+                if (currNode.left != null) {
                     q.add(currNode.left);
                 }
 
-                if(currNode.right != null){
+                if (currNode.right != null) {
                     q.add(currNode.right);
                 }
             }
         }
     }
 
+    public static void levelOrder2(TreeNode root){
+        Queue<TreeNode> q = new LinkedList<>();
+        
+        q.add(root);
+        q.add(null);
+
+        while(!q.isEmpty()){
+            TreeNode curr = q.remove();
+
+            if(curr == null){ // if null then we have to print the new line
+                System.out.println();
+
+                if(q.isEmpty()){
+                    break;
+                } else{ // add the null after getting the left and right nodes of the curr node
+                    q.add(null);
+                }
+            } else{ // the curr is not null
+                System.out.print(curr.data + " ");
+
+                if(curr.left != null){
+                    q.add(curr.left);
+                }
+                
+                if(curr.right != null){
+                    q.add(curr.right);
+                }
+            }
+        }
+
+    }
+
     /*
      * Count of Nodes
      * O(N)
      */
-    public static int count(TreeNode root){
+    public static int count(TreeNode root) {
         // base condition
-        if(root == null){
+        if (root == null) {
             return 0;
         }
 
@@ -149,9 +208,9 @@ public class BinaryTree {
      * Sum of nodes
      * O(N)
      */
-    public static int sum(TreeNode root){
+    public static int sum(TreeNode root) {
         // base condition
-        if(root == null) {
+        if (root == null) {
             return 0;
         }
 
@@ -166,9 +225,9 @@ public class BinaryTree {
      * Height of tree
      * O(N)
      */
-    public static int height(TreeNode root){
+    public static int height(TreeNode root) {
         // base condition
-        if(root == null){
+        if (root == null) {
             return 0;
         }
 
@@ -184,9 +243,9 @@ public class BinaryTree {
      * Diameter of tree
      * O(N^2)
      */
-    public static int diameter(TreeNode root){
+    public static int diameter(TreeNode root) {
         // base condition
-        if(root == null){
+        if (root == null) {
             return 0;
         }
 
@@ -201,8 +260,8 @@ public class BinaryTree {
     /*
      * Sum of Kth level nodes of Tree
      */
-    public static int SumOfKthLevel(TreeNode root, int k){
-        if(root == null){
+    public static int SumOfKthLevel(TreeNode root, int k) {
+        if (root == null) {
             return -1;
         }
         int sum = 0;
@@ -210,24 +269,24 @@ public class BinaryTree {
         q.add(root);
         q.add(null); // * NULL represents new line or the end of the current level
 
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             TreeNode currNode = q.remove();
-            if(currNode == null){ // if it is null it means we have to print new line
+            if (currNode == null) { // if it is null it means we have to print new line
                 k--;
-                if(q.isEmpty()){
+                if (q.isEmpty()) {
                     break;
-                } else{ // add the null back for the next level
+                } else { // add the null back for the next level
                     q.add(null);
                 }
-            } else{
-                if(k == 0){
+            } else {
+                if (k == 0) {
                     sum += currNode.data;
                 }
-                if(currNode.left != null){
+                if (currNode.left != null) {
                     q.add(currNode.left);
                 }
 
-                if(currNode.right != null){
+                if (currNode.right != null) {
                     q.add(currNode.right);
                 }
             }
@@ -236,11 +295,12 @@ public class BinaryTree {
         return sum;
     }
 
-    public static void main(String[] args){
-        int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+    public static void main(String[] args) {
+        int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         BinaryTreeStructure bTree = new BinaryTreeStructure();
 
         TreeNode rootNode = bTree.createNode(nodes);
+
         System.out.print("Pre-order traversal: ");
         PreorderTraversal(rootNode);
         System.out.println();
@@ -255,6 +315,7 @@ public class BinaryTree {
 
         System.out.println("Level-order traversal: ");
         levelOrder(rootNode);
+        System.out.println();
         
         System.out.println("Total Count: " + count(rootNode));
 
@@ -264,6 +325,7 @@ public class BinaryTree {
 
         System.out.println("Diameter: " + diameter(rootNode));
 
-        System.out.println("Sum of kth level: " + SumOfKthLevel(rootNode, 1));        
+        System.out.println("Sum of kth level: " + SumOfKthLevel(rootNode, 1));
+        
     }
 }

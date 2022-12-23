@@ -235,7 +235,6 @@ public class ReversingLinkedList {
         while(count > 0){ // will decrement the count every time by 1
             ListNode last = prev;
             ListNode newEnd = curr;
-
             ListNode next = curr.next;
 
             for(int i=0; curr != null && i<k; i++){
@@ -245,7 +244,7 @@ public class ReversingLinkedList {
                 if(next != null){ next = next.next; }
             }
 
-            if(last != null){
+            if(last != null){ // last != null then we have to link the new start of the reversed list with the last
                 last.next = prev;
             } else{
                 head = prev;
