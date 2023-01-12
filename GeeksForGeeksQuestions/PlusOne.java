@@ -1,3 +1,5 @@
+// ! Not working for the inputs having 9
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -34,6 +36,7 @@ public class PlusOne {
     static int arrToInt(ArrayList<Integer> arr) {
         int temp = 0;
 
+        System.out.println("aa to int");
         for (int i = 0; i < arr.size(); i++) {
             temp = temp * 10 + arr.get(i);
         }

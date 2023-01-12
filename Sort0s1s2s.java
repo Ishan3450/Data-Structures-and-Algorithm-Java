@@ -19,7 +19,7 @@ public class Sort0s1s2s{
             if(a[itr] == 0){
                 swap(a, itr, placer);
                 itr ++;
-                placer ++;
+                placer ++;  
             } else if(a[itr] == 1){
                 itr ++;
             } else{ // we found 2

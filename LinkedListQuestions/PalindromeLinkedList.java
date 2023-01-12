@@ -142,7 +142,8 @@ public class PalindromeLinkedList {
         ListNode secondHead = reverse(mid);
 
         // at last we have to re-reverse the head so we are storing the secondHand  
-        ListNode reReverseHead = secondHead;
+        // ! no need to re-reverse the head
+        // ListNode reReverseHead = secondHead;
 
         // now we will start comparing head and secondHead and moving next
         while(head != null && secondHead != null){
@@ -154,7 +155,8 @@ public class PalindromeLinkedList {
         }
 
         // now we have to re-reverse the list we previously reversed
-        reverse(reReverseHead);
+        // ! no need to re-reverse the reversed head
+        // reverse(reReverseHead);
 
         // using OR operation
         return head == null || secondHead == null;

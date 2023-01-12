@@ -3,10 +3,10 @@
  * Go, get a pen and a paper and do debugging and bit calculation parallely
  * XOR(^)
  * x    y   ans
- * 0    1    0
  * 0    0    1
- * 1    1    1
+ * 0    1    0
  * 1    0    0
+ * 1    1    1
  * 
  */
 

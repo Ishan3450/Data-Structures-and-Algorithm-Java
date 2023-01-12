@@ -17,7 +17,7 @@ public class NQueens {
 
     static void placeQueens(ArrayList<ArrayList<Integer>> allBoards, boolean[][] board, int row){
         // base condition
-        if(row == board.length){
+        if(row == board.length){ // we got our answer 
             // createBoards(allBoards, board);
             createBoards(allBoards, board);
             return;

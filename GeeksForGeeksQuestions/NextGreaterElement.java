@@ -10,7 +10,8 @@ public class NextGreaterElement {
         for(int i=n-1; i>=0; i--){
             int curr = arr[i];
 
-            while(curr >= st.peek()){
+            // we have to keep -1 in our stack so we are using it as a condition in the while loop
+            while(st.peek() != -1 && curr >= st.peek()){
                 st.pop();
             }
 

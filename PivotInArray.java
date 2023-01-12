@@ -1,20 +1,6 @@
-// https://practice.geeksforgeeks.org/problems/rotation4723/1
-/*
- * Rotation
- * 
- * - easy question
- * - get the pivot element of the array
- * - return the index of the pivot element + 1
- */
-
-public class RotationsInRotatedArray1 {
-    int findKRotation(int arr[], int n) {
-        // code here
-        return getPivot(arr) + 1;
-    }
-    
+public class PivotInArray {
     static int getPivot(int[] arr){
-        int start = 0;
+        int start= 0;
         int end = arr.length - 1;
 
 
@@ -35,11 +21,17 @@ public class RotationsInRotatedArray1 {
             if(arr[start] > arr[mid]){
                 end = mid - 1;
             } else{
-                start = start + 1;
+                start = mid + 1;
             }
 
         }
 
         return -1;
+    }
+
+    public static void main(String[] args){
+        int[] arr = {5,6,7,8,9,1,2};
+
+        System.out.println(getPivot(arr));
     }
 }

@@ -21,7 +21,6 @@ public class FloorOfANumber {
         int mid = start + (end - start) / 2;
 
         while(start <= end){
-            // * Condition 1
             if(target == arr[mid]){
                 break;
             } else if(target > arr[mid]){
