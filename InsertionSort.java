@@ -1,6 +1,5 @@
-
 /*
- * This is not a proper solution for Insertion Sort, so do refer some online websites.
+ * This is a code solution for bubble sort
  */
 import java.util.Arrays;
 

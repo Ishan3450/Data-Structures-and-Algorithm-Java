@@ -48,9 +48,10 @@ public class MaximumElementInKSizeWindow {
     }
 
     public static void main(String[] args){
-        int[] arr = {2, 5, -1, 7, -3, -1, -2};
+        // int[] arr = {2, 5, -1, 7, -3, -1, -2};
+        int[] arr = {1,3,1,2,0,5};
         int n = arr.length;
-        int k = 4;
+        int k = 3;
         System.out.println(maxElementInKSizeWindow(arr, n, k));
     }
 }
