@@ -56,7 +56,7 @@ public class SquareRootOfNum {
                 root += increment;
             }
 
-            root -= increment; // we will get our ans by applying -1;
+            root -= increment; // to get the last correct one for 2.2 the loop violates at 2.3 so by decrement 0.1 we get the 2.2
             increment /= 10; // this will runn for 2nd presicion point
         }
 

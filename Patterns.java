@@ -49,6 +49,24 @@ public class Patterns {
         pattern37(5);
         System.out.println("------------------------");
         pattern38(5);
+        System.out.println("------------------------");
+        pattern39(5);
+        System.out.println("------------------------");
+        pattern40();
+
+        System.out.println();
+        System.out.println("------------------------");
+        System.out.println("Special pattern");
+        System.out.println("------------------------");
+        pattern41(5);
+        System.out.println("------------------------");
+
+        System.out.println();
+        System.out.println("------------------------");
+        pattern42(4);
+
+        System.out.println("------------------------");
+        pattern43(5);
     }
 
     // *****
@@ -401,10 +419,10 @@ public class Patterns {
         }
     }
 
-    //         1
-    //       2 1 2
-    //     3 2 1 2 3
-    //   4 3 2 1 2 3 4
+    // 1
+    // 2 1 2
+    // 3 2 1 2 3
+    // 4 3 2 1 2 3 4
     // 5 4 3 2 1 2 3 4 5
     static void pattern30(int n) {
         for (int i = 1; i <= n; i++) {
@@ -451,9 +469,9 @@ public class Patterns {
         }
     }
 
-    // 1      1
-    // 12    21
-    // 123  321
+    // 1 1
+    // 12 21
+    // 123 321
     // 12344321
     static void pattern35(int n) {
         for (int i = 1; i <= n * 2; i++) {
@@ -475,24 +493,24 @@ public class Patterns {
     }
 
     /*
-        * * * * *
-        *       *
-        *       *
-        *       *
-        * * * * *
+     * * * * *
+     * *
+     * *
+     * *
+     * * * * *
      */
-    static void pattern36(int n){
+    static void pattern36(int n) {
         // below 4 variables are boundaries of the pattern box
         int initial_j = 1;
         int initial_i = 1;
         int max_j = n;
         int max_i = n;
 
-        for(int i=1; i<=n; i++){
-            for(int j=1; j<=n; j++){
-                if(i == initial_i || i == max_i || j == initial_j || j == max_j){
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (i == initial_i || i == max_i || j == initial_j || j == max_j) {
                     System.out.print("*");
-                } else{
+                } else {
                     System.out.print(" ");
                 }
             }
@@ -502,38 +520,195 @@ public class Patterns {
 
     /*
      * Solid Rhombus
-         * * * * *
-        * * * * *
-       * * * * *
-      * * * * *
+     * * * * *
+     * * * * *
+     * * * * *
+     * * * * *
      * * * * *
      */
-    static void pattern37(int n){
-        for(int i=1; i<=n; i++){
+    static void pattern37(int n) {
+        for (int i = 1; i <= n; i++) {
             // space loop
-            for(int j=5; j>=i; j--){
+            for (int j = 5; j >= i; j--) {
                 System.out.print(" ");
             }
 
             // * loop
-            for(int k=1; k<=n; k++){
+            for (int k = 1; k <= n; k++) {
                 System.out.print("*");
             }
             System.out.println();
         }
     }
 
-    static void pattern38(int n){
-        for(int i=1; i<=n; i++){
+    static void pattern38(int n) {
+        for (int i = 1; i <= n; i++) {
             // spaces loop
-            for(int j=5; j>=i; j--){
+            for (int j = 5; j >= i; j--) {
                 System.out.print(" ");
             }
 
-            for(int j=1; j<=i; j++){
+            for (int j = 1; j <= i; j++) {
                 System.out.print(i + " ");
             }
             System.out.println();
         }
+    }
+
+    /*
+     * 1 2 3 4 5
+     * 2 5
+     * 3 5
+     * 4 5
+     * 5
+     */
+    static void pattern39(int n) {
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j <= n; j++) {
+                if (i == 1 || j == i || j == n) {
+                    System.out.print(j);
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    // 1
+    // 2 3 2
+    // 3 4 5 4 3
+    // 4 5 6 7 6 5 4
+    // 5 6 7 8 9 8 7 6 5
+    // LOCATION OF FILE CONTAINING THE CODE OF ABOVE PATTERN: DSA SUPREME WITH
+    // CODEHELP -> WEEK-1 -> DEBUG-7.CPP
+
+    // 1
+    // 1 2 1
+    // 1 2 3 4 3
+    // 1 2 3 4 3 2 1
+    // Image:
+    // https://b2045649.smushcdn.com/2045649/wp-content/uploads/2021/05/image-1.png?lossy=1&strip=1&webp=1
+    static void pattern40() {
+        int n = 5;
+
+        System.out.print(" ");
+        for (int i = 1; i <= n; i++) {
+            // space loop
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+
+            // main inner loop
+            for (int j = 1, k = 2 * i - 1; j <= 2 * i - 1; j++, k--) {
+                if (j <= i) {
+                    System.out.print(j);
+                } else {
+                    System.out.print(k);
+                }
+            }
+            System.out.println();
+            System.out.print(" ");
+        }
+    }
+
+    // ********1********
+    // *******2*2*******
+    // ******3*3*3******
+    // *****4*4*4*4*****
+    // ****5*5*5*5*5****
+    // Explaination:
+    // https://learn.thecodehelp.in/s/courses/63ac9183e4b0f1067f1b7b32/take
+    static void pattern41(int n) {
+        int pos = 8;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= 16; j++) {
+                if (j >= (pos - i) && j <= (pos + i)) { // in range
+                    if ((i & 1) == 1) { // odd
+                        if ((j & 1) == 1) {
+                            System.out.print(i + 1);
+                        } else {
+                            System.out.print("*");
+                        }
+                    } else { // even
+                        if ((j & 1) == 1) {
+                            System.out.print("*");
+                        } else {
+                            System.out.print(i + 1);
+                        }
+                    }
+                } else { // out of range
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    // 1
+    // 2*3
+    // 4*5*6
+    // 7*8*9*10
+    // 7*8*9*10
+    // 4*5*6
+    // 2*3
+    // 1
+    // https://learn.thecodehelp.in/s/courses/63ac9183e4b0f1067f1b7b32/take
+    static void pattern42(int n) {
+        int count = 1;
+
+        // growing phase
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(count++);
+                if (j != i) {
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+
+        // shrinking phase
+        int start = count - n;
+        for (int i = 0; i < n; i++) {
+            int k = start;
+            for (int j = i; j < n; j++) {
+                System.out.print(k++);
+                if (j != n - 1) {
+                    System.out.print("*");
+                }
+            }
+            start = start - (n - i - 1);
+            System.out.println();
+        }
+    }
+
+    // *
+    // *1*
+    // *121*
+    // *12321*
+    // *121*
+    // *1*
+    // *
+    static void pattern43(int n) {
+        System.out.println("*");
+        for (int i = 0; i < n; i++) {
+            int condition = i <= n / 2 ? 2 * i : 2 * (n-i-1);
+
+            System.out.print("*");
+            for (int j = 0; j <= condition; j++) {
+                if (j <= condition / 2) {
+                    System.out.print(j + 1);
+                } else {
+                    System.out.print(condition-j+1);
+                }
+
+            }
+            System.out.print("*");
+            System.out.println();
+        }
+        System.out.println("*");
     }
 }

@@ -14,8 +14,43 @@ public class LevelOrder {
             this.right = null;
         }
     }
+                
+    // Way 1
+    public List<List<Integer>> levelOrder1(Node root) {
+        List<List<Integer>> list = new ArrayList<>();
+        Queue<Node> q = new LinkedList<>();
+
+        if(root == null){
+            return list;
+        }
+
+        q.add(root);
+        while(!q.isEmpty()){
+            List<Integer> subList = new ArrayList<>();
+            int levelSize = q.size();
+
+            for(int i=0; i<levelSize; i++){
+                Node curr = q.poll();
+
+                subList.add(curr.data);
+
+                if(curr.left != null){
+                    q.add(curr.left);
+                }
+
+                if(curr.right != null){
+                    q.add(curr.right);
+                }
+            }
+
+            list.add(subList);
+        }
+
+        return list;
+    }
     
-    static ArrayList <Integer> levelOrder(Node node){
+    // Way 2
+    static ArrayList <Integer> levelOrder2(Node node){
         // Your code here
         ArrayList<Integer> ans = new ArrayList<>();
         Queue<Node> q = new LinkedList<>();

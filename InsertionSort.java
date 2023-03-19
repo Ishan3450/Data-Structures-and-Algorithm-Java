@@ -1,6 +1,3 @@
-/*
- * This is a code solution for bubble sort
- */
 import java.util.Arrays;
 
 public class InsertionSort {
