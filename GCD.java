@@ -5,6 +5,24 @@ public class GCD {
         System.out.println(gcd(a, b));
     }
 
+    // recommended and easy one
+    static int gcd2(int a, int b){
+        // base conditions
+        if(a == 0){
+            return b;
+        } else if(b == 0){
+            return a;
+        }
+
+        // function body
+        if(a >= b){
+            return gcd2(a-b,b);
+        } else{
+            return gcd2(b-a, b);
+        }
+    }
+
+    // not recommended as % operation is a heavy operation for cpu or memory as computer takes time to perform it
     static int gcd(int a, int b){
         /*
          * Formula of GCD using Euclidian Algorithm:

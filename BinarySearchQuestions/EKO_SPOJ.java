@@ -6,7 +6,7 @@
 
 package BinarySearchQuestions;
 
-public class EKOEko{
+public class EKO_SPOJ{
     public static int getMaximumMinimumHeightForSaw(int[] arr, int n, int woods){
         int start = arr[0], end = 0, ans = -1;
 
