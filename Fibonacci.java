@@ -1,8 +1,11 @@
+/*
+ * Using recursion: TC: O(2^N)
+ */
 public class Fibonacci{
     public static void main(String args[]){
         fibo(5);
         System.out.println("-----------------------");
-        System.out.println(fibonacciUsingRecursion(4));
+        System.out.println(fibonacciUsingRecursion(6));
     }
 
     static void fibo(int n){
@@ -21,9 +24,10 @@ public class Fibonacci{
 
     }
 
+    // using recursion
     static int fibonacciUsingRecursion(int n){
         // base condition
-        if(n < 2){
+        if(n <= 1){
             return n;
         }
 

@@ -3,7 +3,15 @@
  * 
  * - Solved using Backtracking
  * - Read the comments in between the code to understand the question
- * - Time Complexity: O(N!)
+ * - Time Complexity: O(N!) or O(N^N) (O(N^N) as for every queen we have n choice regardless of safe position)
+ *  - TC explaination:
+ *  - in the first row we have all the place available so n choices
+ *  - in second row we have 1 place queen in previous so we can't put queen in that row or column so n-1 choice
+ *  - next row we have n-3, next n-4 till 1
+ *  - so n + (n-1) + (n-2) + (n-3) + (1) so the TC is N!
+ *  - NOTE: WE HAVE IGNORED THE DIAGONAL PART BECAUSE IT MAKES THE PROCESS OF TC COMPLICATED, SO TO MAKE A GENERALIZED FORMULA WE HAVE IGNORED THE DIAGONAL PART.
+ *  
+ * - SC: O(N^2) to store answer in the board
  */
 
 package RecursionQuestions.Backtracking;

@@ -1,5 +1,5 @@
 /*
- * Problem : Apply binary search on an array having size is infiniteee.
+ * Problem : Apply binary search on an array having size is infiniteeeeeeeeee.
  * 
  * - take the array
  * - start a box or a chunk of points with start and end

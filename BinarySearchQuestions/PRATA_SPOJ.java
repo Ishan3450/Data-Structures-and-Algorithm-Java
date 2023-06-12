@@ -4,10 +4,7 @@ public class PRATA_SPOJ {
     public static int getMinimumTimeToMakePratas(int[] arr, int pratas){
         int start = 1, end = 0, ans = -1;
         
-        int highestRank = 0;
-        for(int elem: arr){
-            highestRank = Math.max(highestRank, elem);
-        }
+        int highestRank = arr[arr.length - 1];
         
         end = highestRank * (pratas * (pratas + 1) / 2); // Generalized formula for sum from 1 till n
 

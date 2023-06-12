@@ -1,3 +1,12 @@
+/*
+ * Iterative:
+ *  - TC: O(log n)
+ *  - SC: O(1)
+ * 
+ * Recursive:
+ *  - TC: O(log n)
+ *  - SC: O(log n)
+ */
 public class BinarySearch {
     public static void main(String[] args){
         int[] arr = {1,2,3,4,5};

@@ -1,7 +1,15 @@
 /*
  * Merge Sort
  * 
- * - Solution: O(n * log n)
+ * - Solution: TC: O(n * log n)
+ *  - log n in TC is for at each function call there will be 2 for each
+ *  - and n in the TC is for at each function level not function call (function level can ve be determined by drawing recursive tree) of n elements are merged
+ * - SC: O(N)
+ *  - at each method call we are taking array sizes: fot left:n/2 and for right:n/2,j for next level n/4+n/4 for next n/8+n/8 and so on till 1+1
+ *  - so taking 2 as common: 2(n/2) + 2(n/4) + 2(n/8)
+ *  - now ignoring the constant 2 and taking n as common: n(1/2 + 1/4 + 1/8 ... 1)
+ *  - so if we solve the bracket then we will get some integer constant, so by ignoring that only n left, so the TC is O(n)
+ * 
  * - It is basically like divide and conquer
  * - 1st divide the array in to two halfves
  * - Then sort the two parts using recursion
