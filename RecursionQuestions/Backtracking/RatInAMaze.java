@@ -2,7 +2,7 @@
  * TC: Exponential O(4^(m*n))
  * where m is rows and n is columns
  * at each level we have 4 calls to be made up, down, left and right
- * and 4 calls made for each cell, total cells:m*n
+ * and 4 calls made for each cell, total cells are: m*n
  * 
  * SC: O(m*n)
  * Visited array created: O(m*n) + O(m*n) = 2O(m*n)
@@ -42,7 +42,7 @@ public class RatInAMaze {
     }
 
     /*
-     * Method with no return in the signature
+     * Method with no void return type in the signature
      */
     public static void findDestination(boolean[][] maze, String s, int row, int col) {
         // base condition

@@ -5,6 +5,7 @@
  * - where 4 stands for the longest string from the pad array which is "pqrs" raise to the total input length of the string
  * 
  * SC: O(4^N)
+ *  - SC is O(4^N) because storing all the 4^N strings in the list, that's why.
  */
 
 package RecursionQuestions.Strings;
@@ -12,7 +13,7 @@ package RecursionQuestions.Strings;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhonePad2 {
+public class PhonePadByBabbar {
     /*
      * Approach:
      * 

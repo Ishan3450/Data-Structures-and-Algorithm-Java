@@ -1,6 +1,7 @@
 package RecursionQuestions.Backtracking;
 
 /*
+ ?  - DRAW A RECURSIVVE TREE TO UNDERSTAND IT PROPERLY and take the length of the string 4 to understand it properly
  * TC: O(N!)
  *  - let say a string size is n
  *  - at the very first level there will be n swaps
@@ -15,7 +16,6 @@ package RecursionQuestions.Backtracking;
  *  - expression: n + (n*(n-1)) + (n*(n-1) * (n-2))  + (n*(n-1) * (n-2) * (n-3)) ..... (n*(n-1) * (n-2) * (n-3) .... * (1))
  *     - NOTE: just make an observation in the expression: the highest power is (n*(n-1) * (n-2) * (n-3) .... * (1)) the lst element, and the expression is similar to the factorial problem
  *     - so TC: O(N!)
- *  - DRAW A RECURSIVVE TREE TO UNDERSTAND IT PROPERLY
  * 
  * SC: O(N) where n is the legnth of the string
  *  - as at first call i=0, then i=1, then i=2 then i=outOfBound so n+1 calls
