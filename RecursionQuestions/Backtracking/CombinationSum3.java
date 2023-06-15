@@ -1,5 +1,8 @@
 /*
  * GFG: https://practice.geeksforgeeks.org/problems/combination-sum-iii/1
+ * 
+ * TC: O(N!)
+ * SC: O(N)
  */
 package RecursionQuestions.Backtracking;
 

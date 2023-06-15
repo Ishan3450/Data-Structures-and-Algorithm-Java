@@ -1,5 +1,7 @@
 /*
  * LC: 39 https://leetcode.com/problems/combination-sum/description/
+ * TC: O(2^N)
+ * SC: O(N)
  */
 package RecursionQuestions.Backtracking;
 
