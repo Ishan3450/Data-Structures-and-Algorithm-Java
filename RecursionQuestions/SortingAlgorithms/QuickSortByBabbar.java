@@ -4,9 +4,8 @@
  * Partition logic is responsible to place the pivot element at its right position, in which all the elements to the left of the pivot will be smaller than the pivot and all the elemnets to the right of the pivot will be greater than the pivot.
  * Recursive logic is responsible to sort the left part of the pivot element and right part of the pivot element.
  * TC: O(NLogN) Average Case Complexity
- * 
- * Approach:
- * 
+ *
+ * Approach: 
  * - initially consider element at low as pivot
  * - then count from low+1 till high the elements less than or equal to '<=' value of pivot element
  * - then swap the pivot with the (LOW+COUNT) index. (adding low to the count beause of we are calling the right part also for the sorting in the recursive call)
@@ -62,7 +61,7 @@ public class QuickSortByBabbar {
         int count = 0;
 
         for (int i = low + 1; i <= high; i++) {
-            if (arr[i] <= arr[low]) {
+            if (arr[i] <= pivotValue) {
                 count++;
             }
         }

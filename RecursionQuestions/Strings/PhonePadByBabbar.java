@@ -5,7 +5,7 @@
  * - where 4 stands for the longest string from the pad array which is "pqrs" raise to the total input length of the string
  * 
  * SC: O(4^N)
- *  - SC is O(4^N) because storing all the 4^N strings in the list, that's why.
+ *  - SC is O(4^N) because storing all the 4^N strings in the list at worst case, that's why.
  */
 
 package RecursionQuestions.Strings;
@@ -29,37 +29,31 @@ public class PhonePadByBabbar {
      * - at last for c same procedure will be there
      * - at last we will get all the combinations we can make from the given string
      */
-    public static List<String> letterCombinations(String digits) {
-        if(digits.isEmpty()){
+    public List<String> letterCombinations(String digits) {
+        if (digits.isEmpty()) {
             return new ArrayList<>();
         }
+        String[] combinations = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
         List<String> ans = new ArrayList<>();
-        String[] map = {"", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-        helper(ans, digits, map, 0, new StringBuilder(""));
-
+        helper(digits, combinations, ans, 0, new StringBuilder(""));
         return ans;
     }
 
-    public static void helper(List<String> ans, String digits, String[] map, int index, StringBuilder combination){
+    public void helper(String digits, String[] combinations, List<String> ans, int idx, StringBuilder processed) {
         // base condition
-        if(index == digits.length()){
-            ans.add(combination.toString());
+        if (idx == digits.length()) {
+            ans.add(new String(processed));
             return;
         }
 
         // function body
-        int currDigit = digits.charAt(index) - '0';
-        String mapValue = map[currDigit-1];
+        int currDigit = digits.charAt(idx) - '0';
+        String mappedString = combinations[currDigit];
 
-        for(int i = 0 ; i < mapValue.length(); i++){
-            combination.append(mapValue.charAt(i));
-            helper(ans, digits, map, index+1, combination);
-            combination.deleteCharAt(combination.length()-1);
+        for (int i = 0; i < mappedString.length(); i++) {
+            processed.append(mappedString.charAt(i));
+            helper(digits, combinations, ans, idx + 1, processed);
+            processed.deleteCharAt(processed.length() - 1);
         }
-    }
-    public static void main(String[] args){
-        String str = "23";
-
-        System.out.println(letterCombinations(str));
     }
 }
