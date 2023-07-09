@@ -22,7 +22,7 @@ public class GCD {
         }
     }
 
-    // not recommended as % operation is a heavy operation for cpu or memory as computer takes time to perform it
+    // slightly less recommended as % operation is a somewhat more time taking operation
     static int gcd(int a, int b){
         /*
          * Formula of GCD using Euclidian Algorithm:
