@@ -1,8 +1,8 @@
 /*
  * LC 1655. Distribute Repeating Integers 
  * https://leetcode.com/problems/distribute-repeating-integers/description/
- * TC: 
- * SC:
+ * TC: O(2^N)
+ * SC: O(N)
  */
 package RecursionQuestions.Backtracking;
 
@@ -22,7 +22,11 @@ public class DistributeRepeatingIntegers {
             count[idx++] = value;
         }
 
-        // * passing currCustomer as the very last element index of the quantity array, because if we start from bigger values and if that bigger value is unable to fulfill the quantity value then rest of the left side values will definately unable to do so, so no further call will be made and the code will be MINOR MORE OPTIMIZED :)
+        // * passing currCustomer as the very last element index of the quantity array,
+        // because if we start from bigger values and if that bigger value is unable to
+        // fulfill the quantity value then rest of the left side values will definately
+        // unable to do so, so no further call will be made and the code will be MINOR
+        // MORE OPTIMIZED :)
         Arrays.sort(quantity);
         return helper(count, quantity, quantity.length - 1);
     }
@@ -45,7 +49,6 @@ public class DistributeRepeatingIntegers {
 
                 // backtracking
                 count[j] += quantity[currCustomer];
-
             }
         }
         return false;

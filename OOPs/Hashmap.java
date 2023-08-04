@@ -22,7 +22,7 @@ public class Hashmap {
         System.out.println(map);
 
         map.put("India", 150); // key already exists
-        map.put("China", 150); // new pair will be created
+        map.put("UK", 150); // new pair will be created
         System.out.println(map);
 
         // search for a key in map
@@ -30,15 +30,15 @@ public class Hashmap {
             System.out.println("Found : India");
         }
 
-        if(map.containsKey("Indonesia")){
+        if(map.containsKey("Canada")){
             System.out.println("Found");
         } else{
-            System.out.println("Not Found: Indonesia");
+            System.out.println("Not Found: Canada");
         }
 
         // to get particular key's value
         System.out.println(map.get("India")); // present in map
-        System.out.println(map.get("Indonesia")); // not present in map
+        System.out.println(map.get("Canada")); // not present in map
 
         // * Iteration in HashMap
         System.out.println("Iteration in HashMap");
@@ -66,7 +66,7 @@ public class Hashmap {
 
 
         // to remove any pair from map
-        map.remove("China");
+        map.remove("UK");
         System.out.println(map);
     }
 }

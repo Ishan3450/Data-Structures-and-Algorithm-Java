@@ -1,5 +1,5 @@
 /*
- * FROM: 15:00 around -> https://learn.thecodehelp.in/s/courses/63ac9183e4b0f1067f1b7b32/take
+ * FROM: 15:00 around -> course
  * Applications:
  *  - Search in an infinite array or unbounded array
  *  - Better than binary search when x is near beginning

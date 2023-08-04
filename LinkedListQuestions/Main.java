@@ -1,7 +1,5 @@
 package LinkedListQuestions;
 
-import RecursionQuestions.SortingAlgorithms.BubbleSort;
-
 public class Main {
     public static void main(String[] args){
         All SLL = new All();

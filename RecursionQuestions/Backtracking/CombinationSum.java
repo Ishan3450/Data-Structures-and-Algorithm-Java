@@ -1,6 +1,6 @@
 /*
  * LC: 39 https://leetcode.com/problems/combination-sum/description/
- * TC: O(2^N)
+ * TC: O(N^target)
  * SC: O(N)
  */
 package RecursionQuestions.Backtracking;

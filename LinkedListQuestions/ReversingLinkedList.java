@@ -237,6 +237,7 @@ public class ReversingLinkedList {
             ListNode newEnd = curr;
             ListNode next = curr.next;
 
+            // loop for reversing the k size window
             for(int i=0; curr != null && i<k; i++){
                 curr.next = prev;
                 prev = curr;
