@@ -3,6 +3,34 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class FirstNonRepeatingCharacter {
+    // more space optimized
+    public String FirstNonRepeating2(String A){
+        // code here
+        char[] track = new char[26];
+        Queue<Character> q = new LinkedList<>();
+        StringBuilder ans = new StringBuilder();
+        
+        for(int i = 0 ; i < A.length(); i ++){
+            char curr = A.charAt(i);
+            
+            track[curr - 'a'] ++;
+            q.add(curr);
+            
+            while(!q.isEmpty() && track[q.peek() - 'a'] > 1){
+                q.poll();
+            }
+            
+            if(q.isEmpty()){
+                ans.append("#");
+            }else{
+                ans.append(q.peek());
+            }
+        }
+        
+        return ans.toString();
+    }
+
+
     public String FirstNonRepeating(String A) {
         // code here
         StringBuilder ans = new StringBuilder("");
@@ -34,4 +62,5 @@ public class FirstNonRepeatingCharacter {
 
         return ans.toString();
     }
+
 }
