@@ -2,7 +2,7 @@
  * LeetCode 637
  */
 
-package OOPs.Trees;
+package Trees;
 
 import java.util.*;
 

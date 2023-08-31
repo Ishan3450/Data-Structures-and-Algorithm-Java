@@ -1,4 +1,4 @@
-package OOPs.Trees;
+package Trees;
 
 import java.util.LinkedList;
 import java.util.Queue;

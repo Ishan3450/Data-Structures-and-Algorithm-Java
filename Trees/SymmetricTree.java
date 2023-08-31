@@ -4,7 +4,7 @@
  * SC: O(N)
  */
 
-package OOPs.Trees;
+package Trees;
 
 public class SymmetricTree {
     public class TreeNode {

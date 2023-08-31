@@ -1,4 +1,4 @@
-package OOPs.Trees;
+package Trees;
 
 import javafx.util.Pair;
 
@@ -9,10 +9,6 @@ public class DiameterOfTree {
         int data;
     }
 
-      /*
-      ! The pair class in java is not that much good as per our need,so we are re-creating 
-        our new pair class
-     */
     static class pair{
         int first;
         int second;

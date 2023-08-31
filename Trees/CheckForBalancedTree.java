@@ -1,4 +1,4 @@
-package OOPs.Trees;
+package Trees;
 
 public class CheckForBalancedTree {
     static class Node {
