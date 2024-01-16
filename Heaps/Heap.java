@@ -1,9 +1,20 @@
 package Heaps;
 
-// 1-based index
+// Terminologies:
+
+// For 1-based index
+// --------------------------
 // Left Child: 2*i
 // Right Child: 2*i+1
 // Parent: i/2
+
+// For 0-based index
+// --------------------------
+// Left Child: 2*i+1
+// Right Child: 2*i+2
+// Parent: i/2 - 1
+
+
 // Leaf nodes: from n/2+1 to n are leaf nodes
 
 public class Heap {

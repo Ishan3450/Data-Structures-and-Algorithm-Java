@@ -6,9 +6,7 @@ import java.util.*;
 public class HeapSort {
     public static void main(String[] args) {
         int[] heap = {-1, 87, 78, 43, 44, 56, 12, 5, 6, 3, 23, 32};
-
         // provide a valid heap or run buildHeap method
-
         System.out.println(heapSort(heap, heap.length - 1));
     }
 
