@@ -1,5 +1,7 @@
 package Heaps;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -26,10 +28,6 @@ public class PriorityQueueWithCustomLogic {
          */
         @Override
         public int compareTo(Customer curr) {
-            // for min heap
-            // return curr.id > this.id ? 1 : -1;
-
-            // for max heap
             return this.id > curr.id ? 1 : -1;
         }
 
@@ -62,12 +60,20 @@ public class PriorityQueueWithCustomLogic {
 
     public static void main(String[] args) {
         PriorityQueue<Customer> q = new PriorityQueue<>();
+        PriorityQueue<Customer> q2 = new PriorityQueue<>(Collections.reverseOrder()); // max heap
 
         q.add(new Customer(10, 100, "null"));
         q.add(new Customer(8, 100, "null"));
         q.add(new Customer(4, 100, "null"));
         q.add(new Customer(100, 100, "null"));
 
+        q2.add(new Customer(10, 100, "null"));
+        q2.add(new Customer(8, 100, "null"));
+        q2.add(new Customer(4, 100, "null"));
+        q2.add(new Customer(100, 100, "null"));
+
+        System.out.println(q.peek());
+        System.out.println(q2.peek());
 
         // passing custom comparator
         Comparator<ListNode> minHeapVal = new Comparator<ListNode>() {
@@ -85,9 +91,9 @@ public class PriorityQueueWithCustomLogic {
         pq.add(new ListNode(5));
         pq.add(new ListNode(80));
 
-        System.out.println(pq);
-        pq.remove();
-        pq.add(new ListNode(1));
-        System.out.println(pq);
+        // System.out.println(pq);
+        // pq.remove();
+        // pq.add(new ListNode(1));
+        // System.out.println(pq);
     }
 }
