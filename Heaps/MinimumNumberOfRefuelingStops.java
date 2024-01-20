@@ -3,6 +3,53 @@ package Heaps;
 import java.util.PriorityQueue;
 
 public class MinimumNumberOfRefuelingStops {
+    /*
+     * Easy APproach
+     */
+    private class Station implements Comparable<Station>{
+        int position;
+        int fuel;
+
+        Station(int position, int fuel){
+            this.position = position;
+            this.fuel = fuel;
+        }
+
+        @Override
+        public int compareTo(Station s){
+            return this.fuel > s.fuel ? -1 : 1;
+        }
+    }
+
+    public int minRefuelStops(int target, int startFuel, int[][] stations) {
+        PriorityQueue<Station> pq = new PriorityQueue<>();
+        int maxReach = startFuel;
+        int refuelingCount = 0;
+        int idx = 0;
+
+        while(maxReach < target){
+            while(idx < stations.length && stations[idx][0] <= maxReach){
+                pq.add(new Station(stations[idx][0], stations[idx][1]));
+                idx ++;
+            }
+
+            if(pq.isEmpty()){
+                return -1;
+            }
+
+            maxReach += pq.peek().fuel;
+            refuelingCount ++;
+            pq.remove();
+        }
+
+        return refuelingCount;
+    }
+}
+
+/*
+ * Hard Approach
+ */
+class HardApproach{
     private class HeapNode implements Comparable<HeapNode> {
         int position;
         int fuel;
