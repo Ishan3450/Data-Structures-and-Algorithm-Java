@@ -1,6 +1,5 @@
 package Heaps;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -28,7 +27,8 @@ public class PriorityQueueWithCustomLogic {
          */
         @Override
         public int compareTo(Customer curr) {
-            return this.id > curr.id ? 1 : -1;
+            return this.id > curr.id ? 1 : -1; // for min-heap
+            // return this.id > curr.id ? -1 : 1; // for max-heap
         }
 
         @Override
