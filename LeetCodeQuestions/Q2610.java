@@ -1,5 +1,7 @@
 package LeetCodeQuestions;
 
+import java.util.*;
+
 public class Q2610 {
     public List<List<Integer>> findMatrix(int[] nums) {
         int minSize = 0;

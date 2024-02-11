@@ -1,3 +1,7 @@
+/*
+ * This file is just for running the code written in All.java file
+ */
+
 package LinkedListQuestions;
 
 public class Main {

@@ -16,7 +16,6 @@ public class BinarySearchIn2DMatrix {
                 { 33, 34, 38, 50 }
         };
 
-        int target = 33;
         System.out.println(Arrays.toString(search(arr, 33)));
     }
 

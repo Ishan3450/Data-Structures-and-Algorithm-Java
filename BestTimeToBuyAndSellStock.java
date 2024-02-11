@@ -4,7 +4,6 @@
 class BestTimeToBuyAndSellStock {
     // iterative way
     public int maxProfit(int[] prices) {
-        int i = 0;
         int maxProfit = Integer.MIN_VALUE;
         int lowestPriceOfADay = Integer.MAX_VALUE;
 

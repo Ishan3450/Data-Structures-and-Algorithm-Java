@@ -11,7 +11,7 @@ public class Watermelon {
         int n = sc.nextInt();
 
         isDivisible(n);
-        
+        sc.close();
     }
 
     static void isDivisible(int n){

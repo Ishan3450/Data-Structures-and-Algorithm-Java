@@ -16,6 +16,7 @@ public class OddOrEven {
         } else{
             System.out.println("N is Even !!");
         }
+        sc.close();
     }
 
     static boolean isOdd(int n){

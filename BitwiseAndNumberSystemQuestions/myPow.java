@@ -8,11 +8,11 @@ public class myPow {
         double x = 5;
         int n = 2;
 
-        System.out.println(myPow(x, n));
+        System.out.println(myPowFunc(x, n));
     }
 
     // O(log n) solution
-    static double myPow(double x, int n) {
+    static double myPowFunc(double x, int n) {
         // x: base
         // n: power
 

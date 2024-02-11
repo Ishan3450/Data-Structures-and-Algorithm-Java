@@ -1,8 +1,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
-import javafx.util.Pair;
-
 public class CustomComparator {
 
 	public static void main(String[] args) {
@@ -20,6 +18,11 @@ public class CustomComparator {
 				 */
 			}
 		};
+
+		// below 3 lines are just to remove warnings
+		String[] arr = {};
+		Arrays.sort(arr, comp);
+		System.out.println(Arrays.toString(arr));
 
 		// ? another example
 		// Comparator<Pair> comparator = new Comparator<Pair>() {
