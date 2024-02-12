@@ -12,7 +12,43 @@ public class OnesAndZeroes3DDP {
             }
         }
 
-        return memoization(strs, 0, m, n, dp);
+        // return memoization(strs, 0, m, n, dp);
+        return tabulation(strs, m, n);
+    }
+
+    // tabulation
+    private int tabulation(String[] strs, int m, int n) {
+        int[][][] dp = new int[strs.length + 1][m + 1][n + 1];
+
+        for (int idx = strs.length - 1; idx >= 0; idx--) {
+            for (int currM = 0; currM <= m; currM++) {
+                for (int currN = 0; currN <= n; currN++) {
+                    String curr = strs[idx];
+
+                    int ones = 0;
+                    int zeroes = 0;
+
+                    for (int i = 0; i < curr.length(); i++) {
+                        if (curr.charAt(i) == '0')
+                            zeroes++;
+                        else
+                            ones++;
+                    }
+
+                    int exclude = dp[idx + 1][currM][currN];
+
+                    // not including
+                    int include = 0;
+                    if (currM - zeroes >= 0 && currN - ones >= 0) {
+                        include = 1 + dp[idx + 1][currM - zeroes][currN - ones];
+                    }
+
+                    dp[idx][currM][currN] = Math.max(include, exclude);
+                }
+            }
+        }
+
+        return dp[0][m][n];
     }
 
     // memoization

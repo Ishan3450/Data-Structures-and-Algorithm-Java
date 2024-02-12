@@ -14,7 +14,8 @@ public class CustomClassAsAKeyInHashMap {
         }
 
         /*
-         * Below equals() and hashCode() method is necessary to implement when we are using custom class as a key in hashmap
+         * Below equals() and hashCode() both of the methods are necessary to implement when we are using custom class as a key in hashmap
+         ! Either implementations of a method will not work.
          */
 
         @Override
