@@ -1,6 +1,9 @@
 package DynamicProgramming;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class LongestIncreasingSubsequence {
     /*
@@ -16,6 +19,29 @@ public class LongestIncreasingSubsequence {
 
         // return memoization(nums, 0, -1, dp);
         return spaceOptimized(nums);
+    }
+
+    // most optimized o(n) space and o(nlogn) time binary search approach
+    static int longestSubsequence(int size, int a[]) {
+        List<Integer> list = new ArrayList<>();
+        list.add(a[0]);
+
+        for (int i = 1; i < size; i++) {
+            if (a[i] > list.get(list.size() - 1)) {
+                list.add(a[i]);
+            } else {
+                // binarySearch() will return a positive if element is already present else will
+                // return a negative insertion point
+                int insertionIdx = Collections.binarySearch(list, a[i]);
+
+                if (insertionIdx < 0) {
+                    insertionIdx = -(insertionIdx + 1);
+                }
+
+                list.set(insertionIdx, a[i]);
+            }
+        }
+        return list.size();
     }
 
     // space optimization is possible
