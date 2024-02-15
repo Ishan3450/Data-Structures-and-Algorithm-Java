@@ -1,6 +1,6 @@
 package DynamicProgramming;
 
-public class BurseBalloons {
+public class BurstBalloons {
     public int maxCoins(int[] nums) {
         // return recursive(nums, 0, nums.length-1);
 
