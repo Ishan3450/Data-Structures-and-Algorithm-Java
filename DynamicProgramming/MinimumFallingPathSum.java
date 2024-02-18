@@ -2,7 +2,7 @@ package DynamicProgramming;
 
 import java.util.Arrays;
 
-public class MinimumFailingPathSum {
+public class MinimumFallingPathSum {
 
     /*
      * There is a test case in the problem in which if you initialize dp with -1 it will not work and if initialized with Integer.MAX_VALUE it works, the values of the matrix in the test case are all 0s.
