@@ -45,15 +45,15 @@ public class KruskalsAlgorithm {
     /*
      * Union set using union find algorithm
      */
-    private static void unionSet(int[] parent, int[] power, int source, int destination) {
+    private static void unionSet(int[] parent, int[] power, int parentOfSource, int parentOfDestination) {
         // we have to do union of source and destination
 
-        if (power[source] < power[destination]) {
-            parent[source] = destination;
-            power[destination]++;
+        if (power[parentOfSource] < power[parentOfDestination]) {
+            parent[parentOfSource] = parentOfDestination;
+            power[parentOfDestination]++;
         } else { // power[source] > power[destination]
-            parent[destination] = source;
-            power[source]++;
+            parent[parentOfDestination] = parentOfSource;
+            power[parentOfSource]++;
         }
     }
 }
