@@ -1,8 +1,5 @@
 // LC Hard: 44
-
 package Recursion;
-
-import java.util.Arrays;
 
 public class WildcardMatching {
     public static boolean isMatch(String s, String p) {
@@ -79,6 +76,50 @@ public class WildcardMatching {
 
         // if both characters are neither equal or ?(1st condition of the func body) nor *(2nd condition in the func body) it means both the characters are different
         return false; // as not matching patterns
+    }
+
+    private boolean memoization(String s, String p, int i, int j, Boolean[][] dp){
+        // base condition
+        if(i >= s.length() && j < p.length()){
+            while(j < p.length()){
+                if(p.charAt(j) != '*'){
+                    return false;
+                }
+                j ++;
+            }
+            return true;
+        }
+
+        if(i < s.length() && j >= p.length()){
+            return false;
+        }
+
+        if(i >= s.length() && j >= p.length()){
+            return true;
+        }
+
+        if(dp[i][j] != null){
+            return dp[i][j];
+        }
+
+        // function body
+        char scurr = s.charAt(i);
+        char pcurr = p.charAt(j);
+
+        boolean ans = false;
+        if(pcurr == '?'){
+            ans = memoization(s, p, i+1, j+1, dp);
+        } else if (pcurr == '*'){
+            ans = memoization(s, p, i+1, j, dp) || memoization(s, p, i, j+1, dp);
+        } else { // both are characters, no symbols
+            if(scurr != pcurr){
+                ans = false;
+            } else {
+                ans = memoization(s, p, i+1, j+1, dp); // both chars are same
+            }            
+        }
+
+        return dp[i][j] = ans;
     }
 
     

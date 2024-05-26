@@ -8,18 +8,91 @@
  */
 package Backtracking;
 
-public class SudokuByBabbar{
-    public static void main(String[] args){
-        char[][] board = new char[][]{
-            {'3', '.', '6', '5', '.', '8', '4', '.', '.'},
-            {'5', '2', '.', '.', '.', '.', '.', '.', '.'},
-            {'.', '8', '7', '.', '.', '.', '.', '3', '1'},
-            {'.', '.', '3', '.', '1', '.', '.', '8', '.'},
-            {9, '.', '.', '8', '6', '3', '.', '.', '5'},
-            {'.', '5', '.', '.', 9, '.', '6', '.', '.'},
-            {'1', '3', '.', '.', '.', '.', '2', '5', '.'},
-            {'.', '.', '.', '.', '.', '.', '.', '7', '4'},
-            {'.', '.', '5', '2', '.', '6', '3', '.', '.'}
+/*
+ * This is version 2 which takes row and col extra parameters to reduce traversing whole board for each recursive call
+ ? NOTE: Old version is below after this class ends
+ */
+class Version2 {
+    class Solution {
+        public void solveSudoku(char[][] board) {
+            helper(board, 0, 0);
+        }
+
+        private boolean helper(char[][] board, int row, int col) {
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if (board[i][j] == '.') {
+                        for (char ch = '1'; ch <= '9'; ch++) {
+                            if (isSafe(board, i, j, ch)) {
+                                board[i][j] = ch;
+
+                                int nextCol = j + 1;
+                                int nextRow = i;
+                                if (nextCol >= 9) {
+                                    nextCol = 0;
+                                    nextRow++;
+                                }
+
+                                if (helper(board, nextRow, nextCol)) {
+                                    return true;
+                                }
+
+                                board[i][j] = '.';
+                            }
+                        }
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        private boolean isSafe(char[][] board, int i, int j, char val) {
+            // row check
+            for (int row = 0; row < 9; row++) {
+                if (board[row][j] == val) {
+                    return false;
+                }
+            }
+
+            // col check
+            for (int col = 0; col < 9; col++) {
+                if (board[i][col] == val) {
+                    return false;
+                }
+            }
+
+            // 3x3 mat check
+            int rowStart = i - (i % 3);
+            int colStart = j - (j % 3);
+
+            for (int row = rowStart; row < rowStart + 3; row++) {
+                for (int col = colStart; col < colStart + 3; col++) {
+                    if (board[row][col] == val) {
+                        return false;
+                    }
+                }
+            }
+
+            // safe to put
+            return true;
+        }
+    }
+}
+
+public class SudokuByBabbar {
+    public static void main(String[] args) {
+        char[][] board = new char[][] {
+                { '3', '.', '6', '5', '.', '8', '4', '.', '.' },
+                { '5', '2', '.', '.', '.', '.', '.', '.', '.' },
+                { '.', '8', '7', '.', '.', '.', '.', '3', '1' },
+                { '.', '.', '3', '.', '1', '.', '.', '8', '.' },
+                { 9, '.', '.', '8', '6', '3', '.', '.', '5' },
+                { '.', '5', '.', '.', 9, '.', '6', '.', '.' },
+                { '1', '3', '.', '.', '.', '.', '2', '5', '.' },
+                { '.', '.', '.', '.', '.', '.', '.', '7', '4' },
+                { '.', '.', '5', '2', '.', '6', '3', '.', '.' }
         };
 
         solveSudoku(board);
@@ -27,9 +100,9 @@ public class SudokuByBabbar{
         display(board);
     }
 
-    static void display(char[][] board){
-        for(char[] row: board){
-            for(char element: row){
+    static void display(char[][] board) {
+        for (char[] row : board) {
+            for (char element : row) {
                 System.out.print(element + " ");
             }
             System.out.println();
@@ -40,24 +113,25 @@ public class SudokuByBabbar{
         solve(board, 9);
     }
 
-    public static boolean solve(char[][] board, int n){
+    public static boolean solve(char[][] board, int n) {
         // in this case of this solution no base case for recursion is required.
 
         // searching for an empty place in the board
-        for(int i = 0 ; i < n; i ++){
-            for(int j = 0; j < n; j++){
-                if(board[i][j] == '.'){ // empty position found at i,j cell
-                    for(char c='1'; c<='9'; c++){ // trying to place 1 to 9 in that cell
-                        if(isSafe(board, n, c, i, j)){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == '.') { // empty position found at i,j cell
+                    for (char c = '1'; c <= '9'; c++) { // trying to place 1 to 9 in that cell
+                        if (isSafe(board, n, c, i, j)) {
                             // placing the value c at i,j cell
                             board[i][j] = c;
-                            
+
                             // recursive call
                             boolean aageKaSolution = solve(board, n);
 
-                            // if aageKaSolution returns true means that we have found a solution, so no need to get another solution as in question only 1 solution exists
+                            // if aageKaSolution returns true means that we have found a solution, so no
+                            // need to get another solution as in question only 1 solution exists
                             // due to this check base check is not required
-                            if(aageKaSolution){ // means we have solved the sudoku
+                            if (aageKaSolution) { // means we have solved the sudoku
                                 return true;
                             }
 
@@ -66,45 +140,47 @@ public class SudokuByBabbar{
                         }
                     }
 
-                    // if unable to put any of the value from 1 till 9 it means previous calls have some mistake in placing the values from 1 till 9 
+                    // if unable to put any of the value from 1 till 9 it means previous calls have
+                    // some mistake in placing the values from 1 till 9
                     return false;
                 }
             }
         }
-        
-        /*  
+
+        /*
          * the code will reach here on 2 cases:
          * 1. when all the cells are filled
-         * 2. as all the cells are filled the main row and col loop will simply just run and exit on the completion condition
+         * 2. as all the cells are filled the main row and col loop will simply just run
+         * and exit on the completion condition
          * So we have solved the sudoku, that's why returning true
          * This will also help in achieving aageKaSolution boolean variable up there
-        */ 
+         */
         return true;
     }
 
-    public static boolean isSafe(char[][] board, int n, char value, int currRow, int currCol){
+    public static boolean isSafe(char[][] board, int n, char value, int currRow, int currCol) {
         // curr col check
-        for(int row=0; row<n; row++){
-            if(board[row][currCol] == value){
+        for (int row = 0; row < n; row++) {
+            if (board[row][currCol] == value) {
                 return false;
             }
         }
 
         // curr row check
-        for(int col=0; col < n; col++){
-            if(board[currRow][col] == value){
+        for (int col = 0; col < n; col++) {
+            if (board[currRow][col] == value) {
                 return false;
             }
         }
 
         // curr 3x3 matrix check
         int sqrt = 3; // sqrt of n i.e size of the board
-        int rowStart = currRow - currRow%sqrt;
-        int colStart = currCol - currCol%sqrt;
+        int rowStart = currRow - currRow % sqrt;
+        int colStart = currCol - currCol % sqrt;
 
-        for(int row=rowStart; row < rowStart+3; row ++){
-            for(int col=colStart; col < colStart+3; col ++){
-                if(board[row][col] == value){
+        for (int row = rowStart; row < rowStart + 3; row++) {
+            for (int col = colStart; col < colStart + 3; col++) {
+                if (board[row][col] == value) {
                     return false;
                 }
             }
