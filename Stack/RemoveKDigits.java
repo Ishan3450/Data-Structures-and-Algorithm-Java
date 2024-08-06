@@ -1,5 +1,7 @@
 package Stack;
 
+import java.util.Stack;
+
 public class RemoveKDigits{
 	public String removeKdigits(String num, int k) {
         if(num.length() == k) return "0";
