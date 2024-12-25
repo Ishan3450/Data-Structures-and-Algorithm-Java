@@ -4,7 +4,7 @@
  * - First take any random element and name it pivot
  * - then put all the elements to the left side of pivot which are smaller than the pivot
  * - and put all the elements to the right side of pivot which are greater than pivot
- * - so, at it iteration pivot will be at it's correct position
+ * - so, at each iteration pivot will be at it's correct position
  *
  */
 
