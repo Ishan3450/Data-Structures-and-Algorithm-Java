@@ -1,5 +1,5 @@
 /*
- * GFG: https://practice.geeksforgeeks.org/problems/combination-sum-iii/1
+ * https://leetcode.com/problems/combination-sum-iii/submissions/1492344666/
  * 
  * TC: O(N!)
  * SC: O(N)

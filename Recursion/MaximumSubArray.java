@@ -1,7 +1,6 @@
 /*
  * LC: 53 https://leetcode.com/problems/maximum-subarray/description/
  * 
- * 2 method with 2 different approaches are there
  */
 
 package Recursion;
@@ -10,11 +9,29 @@ import java.util.Arrays;
 
 public class MaximumSubArray {
     /*
+     * Method 2
+     * TC: O(n)
+     * SC: constant
+     */
+    public int maxSubArray(int[] nums) {
+        int maxSum = nums[0];
+        int contigiousSubarraySum = nums[0];
+
+        for(int i = 1 ; i < nums.length ; i ++) {
+            // finding max either starts from current element or add it with the contigious sum and check
+            contigiousSubarraySum = Math.max(nums[i], nums[i] + contigiousSubarraySum);
+            maxSum = Math.max(maxSum, contigiousSubarraySum);
+        }
+        return maxSum;
+    }
+
+
+    /*
      * Method 1
      * TC: O(NlogN)
      * SC: O(logN)
      */
-    public static int maxSubArray(int[] nums) {
+    public static int maxSubArrayy(int[] nums) {
         // base condition
         if (nums.length == 1) {
             // if only 1 element is there then we will consider it as the max element
@@ -25,10 +42,10 @@ public class MaximumSubArray {
         int mid = nums.length / 2;
 
         // left part max
-        int left = maxSubArray(Arrays.copyOfRange(nums, 0, mid));
+        int left = maxSubArrayy(Arrays.copyOfRange(nums, 0, mid));
 
         // right part max
-        int right = maxSubArray(Arrays.copyOfRange(nums, mid, nums.length));
+        int right = maxSubArrayy(Arrays.copyOfRange(nums, mid, nums.length));
 
         // accorss sum (maxLeftPart + maxRightPart) including mid
         int maxLeftSum, maxRightSum;
